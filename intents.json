@@ -1,0 +1,715 @@
+{"intents": [
+        {"tag": "cont_loop_greeting1",
+         "patterns": ["I am good.","Fine","good","I am ok. Thanks","Not bad"],
+         "responses": ["Alright! I can help you with the initial steps to treat minor injuries. Or if you are experiencing any symptoms, you can share them with me. That way, I can provide more information about which disease/issue those symptoms might be related to."],
+         "context": [""]
+        },
+		{"tag": "cont_loop_greeting2",
+         "patterns": ["I am sick.","I am not well", "I am unwell."],
+         "responses": ["Sorry to hear that. I can help you with the initial steps to treat minor injuries. Or if you are experiencing any symptoms, you can share them with me. That way, I can provide more information about which disease/issue those symptoms might be related to."],
+         "context": [""]
+        },
+		{"tag": "unknown",
+         "patterns": [""],
+         "responses": ["Sorry I cannot understand. Please try again."],
+         "context": [""]
+        },
+		{"tag": "cont_loop_yes",
+         "patterns": ["Y", "Yes", "Yes, please"],
+         "responses": ["Please tell my your symptoms", "Please give me more info"],
+         "context": [""]
+        },
+		{"tag": "cont_loop_no",
+         "patterns": ["No", "N","No, thank you."],
+         "responses": ["You may click on 'End chat' to exit the chat. Bye", "You may click on 'End chat' to exit the chat. Goodbye", "You may click on 'End chat' to exit the chat. Nice chatting to you, bye", "You may click on 'End chat' to exit the chat. Till next time"],
+         "context": [""]
+        },
+		{"tag": "Doctor_info",
+		"patterns": ["Doctor","I would like to book an appointment","I would like to get information","Information"],
+		"responses":["Dr. med. Eva-Maria von Ehren (General Medicine): +4917660009368 \n Dr. med. Werner Soehlmann (Pediatrician): +4917660009369 \n Dr. med. Daniela Geller (Obstetrician/Gynecologist (OB/GYN)) \n Dr. med. Notburga Aengenheyster (Psychiatrist): +4917660009370 \n Dr. med. Erhard Klein (Dermatologist): +4917660009367 \n Dr. med. Beate Niehues-Gausselmann (Gastroenterologist): +4917660009366 \n Dr. med. Peter Fluer (Psychiatrist): +4917660009365 \n Dr. med. Esmatollah Kasim (Cardiologist): +4917660009364 \nPlease mail on info@abc-praxis.com to book appointment with an above mentioned doctor.\n Is there anything else I can help you with? (Yes/No)"],
+         "context": ["cont_loop_yes","cont_loop_no"]
+		},
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+         "responses": ["See you! Hope you get well soon.", "Have a nice day! Hope you get well soon.", "Get well soon", "Bye! Hope you get well soon."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["Happy to help! ", "Any time!", "My pleasure."],
+        "context": [""]
+        },
+        {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Sorry, can't understand you", "Please give me more information.", "Not sure I understand."],
+         "context": [""]
+        },
+        {"tag": "options",
+         "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
+         "responses": ["If you provide me information about your symptoms, I can help you with the disease or kind of issue you are facing. I can also provide you doctors' contact information."],
+         "context": [""]
+        },
+        {"tag": "blood_pressure",
+         "patterns": ["I get headaches, fatigue, vision problems, chest pain and irregular heartbeat. I also face difficulty in breathing, blood in my urine and pounding in chest, neck, ears.", "I experience irregular heartbeat, fatigue/confusion, chest pain and pounding in chest, nose or ears. I get headaches, nosebleeds and blood in urine.","I cannot see clearly sometimes. I have pain in my chest and my heartbeat is irregular. I have a headache, confusion, fatigue and bleeding from my nose and blood in my urine. I face difficulty while breathing and pounding in my chest, neck, and ears." ],
+         "responses": ["Hang in there! Looks like you might have high blood pressure or Hypertension.\n High blood pressure or hypertension increases the risk of heart disease and stroke. Hypertension risk factors include obesity, drinking too much alcohol, smoking, and family history. Beta-blockers are a common treatment for hypertension.\n Until then you should take the following precautions:\n 1. Losing weight if you are overweight or obese.\n 2.Quitting smoking.\n 3.Eating a healthy diet, including the DASH diet (eating more fruits, vegetables, and low fat dairy products, less saturated and total fat).\n 4.Reducing the amount of sodium in your diet to less than 1,500 milligrams a day if you have high blood pressure; healthy adults should try to limit their sodium intake to no more than 2,300 milligrams a day (about 1 teaspoon of salt).\n 5.Getting regular aerobic exercise (such as brisk walking at least 30 minutes a day, several days a week).\n 6.Limiting alcohol to two drinks a day for men, one drink a day for women.\n For more information, please refer the following link: https://www.webmd.com/hypertension-high-blood-pressure/default.htm \n1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+         "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+        },
+       {
+       "tag": "Cuts",
+       "patterns": ["What to do if Cuts?", "How to cure Cuts?", "Which medicine to apply for Cuts?", "what to apply on cuts?", "Cuts"],
+       "responses": ["Oh!! That must hurt!! But don't worry, here's what you can do. \nWash the cut properly to prevent infection and stop the bleeding by applying pressure for 1-2minutes until bleeding stops. Apply Petroleum Jelly to make sure that the wound is moist for quick healing. Finally cover the cut with a sterile bandage. Pain relievers such as acetaminophen can be applied. \n1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Abrasions",
+       "patterns": ["how do you treat abrasions?", "Do Abrasions cause scars?",
+       "Abrasions", "what to do if abrasions?", "Which medicine to apply for abrasions?",
+       "How to cure abrasions?"],
+       "responses": [
+       "Here's what you can do. \nBegin with washed hands. Gently clean the area with cool to lukewarm water and mild soap. Remove dirt or other particles from the wound using sterilized tweezers.\n For a mild scrape that’s not bleeding, leave the wound uncovered.If the wound is bleeding, use a clean cloth or bandage, and apply gentle pressure to the area to stop any bleeding.\n Cover a wound that bled with a thin layer of topical antibiotic ointment, like Bacitracin, or a sterile moisture barrier ointment, like Aquaphor. Cover it with a clean bandage or gauze. \n Gently clean the wound and change the ointment and bandage once per day.Watch the area for signs of infection, like pain or redness and swelling. See your doctor if you suspect infection. \n1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information) "],
+      "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "stings",
+       "patterns": [
+               "How do you treat Sting?",
+               "Stings",
+               "What to do if you get a sting?",
+               "Which medicine to apply if sting?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \nRemove any stingers immediately. Some experts recommend scraping out the stinger with a credit card. Applying ice to the site may provide some mild relief. Apply ice for 20 minutes once every hour as needed. Wrap the ice in a towel or keep a cloth between the ice and skin to keep from freezing the skin.\n Taking an antihistamine such as diphenhydramine (Benadryl) or a nonsedating one such as loratadine (Claritin) will help with itching and swelling. Take acetaminophen (Tylenol) or ibuprofen (Motrin)for pain relief as needed. Wash the sting site with soap and water. Placing hydrocortisone cream on the sting can help relieve redness, itching, and swelling. \n1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Splinter",
+       "patterns": [
+               "How to remove Splinters",
+               "How to cure Splinters?",
+               "What to do if I have splinters?",
+               "How do you bring a splinter to the surface?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \n1. Soak it in epsom salts. Dissolve a cup of the salts into a warm bath and soak whatever part of the body has the splinter. Failing that, you can also put some of the salts onto a bandage pad and leave it covered for a day; this will eventually help bring the splinter to the surface.\n 2. Vinegar or oil. Another simple way to draw out that stubborn splinter is to soak the affected area in oil (olive or corn) or white vinegar. Just pour some in a bowl and soak the area for around 20 to 30 minutes. \n1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+       "context": ["cont_loop_yes", "cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Sprains",
+       "patterns": [
+               "How do you treat a sprain?",
+               "what to do if i get a sprain?",
+               "Which cream to apply if i get a sprain?",
+               "Which medicine to apply if I get a sprain?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \nUse an ice pack or ice slush bath immediately for 15 to 20 minutes and repeat every two to three hours while you're awake. To help stop swelling, compress the ankle with an elastic bandage until the swelling stops.\n In most cases, pain relievers — such as ibuprofen (Advil, Motrin IB, others) or naproxen sodium (Aleve, others) or acetaminophen (Tylenol, others) are enough to manage the pain of a sprained ankle. \n1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+     "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Strains",
+       "patterns": [
+               "How do you treat a strain?",
+               "what to do if i get a strain?",
+               "Which cream to apply if i get a strain?",
+               "Which medicine to apply if I get a strain?",
+               "How do you diagnose a strain?",
+               "Is heat or ice better for a pulled muscle?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \nRest, Ice, Compression and Elevation can be used to cure strains. Avoid using your muscle for a few days, especially if movement causes an increase in pain and also Apply ice immediately after injuring your muscle. This will minimize swelling. Don’t put ice directly on your skin. Use an ice pack or wrap ice in a towel. To reduce swelling, wrap the affected area with an elastic bandage until swelling comes down. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+      "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Nasal Congestion",
+       "patterns": [
+               "How do you treat nasal Congestion?",
+               "what to do if i get a nasal congestion?",
+               "Which medicine to take if I have a nasal congestion?",
+               "what to do if i have a blocked nose?",
+               "How do you treat a blocked nose?",
+               "How long does nasal congestion last?"
+       ],
+       "responses": [
+               "Oh!! That must be tough!! But don't worry, here's what you can do. \nWhen you’re stuffed up, focus on keeping your nasal passages and sinuses moist. To keep your nasal passages moist, you can:\n 1) Use a humidifier or vaporizer.\n 2) Drink lots of fluids. This will thin out your mucus, which could help prevent blocked sinuses.\n 3) Place a warm, wet towel on your face. It may relieve discomfort and open your nasal passages. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+     "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Cough",
+       "patterns": [
+               "How to cure cough?",
+               "How do you treat cough?",
+               "what to do if i get a cough?",
+               "Which medicine to take if I get cough?",
+               "How do you get rid of cough?"
+       ],
+       "responses": [
+               "Here's what you can do. \n1) Honey:- Use honey to treat a cough, mix 2 teaspoons (tsp) with warm water or an herbal tea. Drink this mixture once or twice a day. Do not give honey to children under 1 year of age.\n 2) Ginger:- Brew up a soothing ginger tea by adding 20–40 grams (g) of fresh ginger slices to a cup of hot water. Allow to steep for a few minutes before drinking. Add honey or lemon juice to improve the taste and further soothe a cough.\n 3) Fluids:- Staying hydrated is vital for those with a cough or cold. Research indicates that drinking liquids at room temperature can alleviate a cough, runny nose, and sneezing. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+      "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Sore Throat",
+       "patterns": [
+               "How do you treat sore throat?",
+               "what to do if i get a sore throat?",
+               "Which medicine to take if I get a sore throat?",
+               "How to cure sore throat?"
+       ],
+       "responses": [
+               "1) Make sure you get plenty of rest and drink a lot of fluids.\n 2) Inhale steam,Run hot water in a sink.Drape a towel over you to trap the steam, and have the person lean over the sink with the water running. Tell him to breathe deeply through his mouth and nose for 5 to 10 minutes. Repeat several times a day.\n 3)Have him sip chicken broth or warm tea with honey. Don’t give honey to a child under 12 months of age. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Gastrointestinal problems",
+       "patterns": [
+               "How do you treat gas problems?",
+               "what to do if i have Gastrointestinal problems?",
+               "Which medicine to take if I get gas problem?",
+               "How to cure Gas problems?"
+       ],
+       "responses": [
+               "Here's what you can do. \n1) Replenish body fluids.\n 2) Do not take antidiarrheal drugs or laxatives or pain medication, unless specified by a medical professional.\n 3) Taking antacids may help, per recommendation of a healthcare professional.\n 4) If prone to frequent heartburns, seek medical help.\n 5) Taking meals that are not spicy regularly, can relieve ulcer pains.\n 6) Seek medical help, if conditions persist or continue to worsen. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Skin problems",
+       "patterns": [
+               "How do you treat Skin problems?",
+               "what to do if i get a skin allergy?",
+               "Which medicine to take if I get a skin allergy?",
+               "How to cure skin allergy?"
+       ],
+       "responses": [
+               "Here's what you can do. \n1) Hydrocortisone cream.\n 2) Ointments like calamine lotion.\n 3) Antihistamines.\n 4) Cold compresses.\n 5) Oatmeal baths.\n 6) Talk to your doctor about what's best for your specific rash. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+ "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Abdominal Pain",
+       "patterns": [
+               "How do you treat Abdominal Pain?",
+               "what to do if i get a Abdominal Pain?",
+               "Which medicine to take if I get a Abdominal Pain?",
+               "How to cure Abdominal Pain?"
+       ],
+       "responses": [
+               "1) Provide clear fluids to sip, such as water, broth, or fruit juice diluted with water.\n 2) Serve bland foods, such as saltine crackers, plain bread, dry toast, rice, gelatin, or applesauce.\n 3) Avoid spicy or greasy foods and caffeinated or carbonated drinks until 48 hours after all symptoms have gone away. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+      "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Bruises",
+       "patterns": [
+               "How do you treat Bruises?",
+               "what to do if i get a Bruise?",
+               "Which medicine to take if I get a Bruise?",
+               "How to cure Bruises?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \n1) Ice the bruise with an ice pack wrapped in a towel.\n 2) Leave it in place for 10 to 20 minutes.\n 3) Repeat several times a day for a day or two as needed.\n 4) Compress the bruised area if it is swelling, using an elastic bandage. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Broken Toe",
+       "patterns": [
+               "How do you treat a Broken Toe?",
+               "what to do if i get a Broken Toe?",
+               "Which medicine to take if I get a Broken Toe?",
+               "How to cure Broken Toe?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \n1) To help decrease pain and swelling in a broken toe, elevate the foot, ice the injury, and stay off the foot.\n 2) Depending on the severity of the fracture, the toe may need to be put back into place (reduced), and some compound toe fractures may require surgery.\n 3) Most broken toes heal without complications in six weeks. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Choking",
+       "patterns": [
+               "How do you treat Choking?",
+               "what to do if i get a Choke?",
+               "Which medicine to take if I get Choked?",
+               "How to cure Choking?"
+       ],
+       "responses": [
+               "Hang in there! Here's what you can do. \n1) Encourage them to keep coughing to try to clear the blockage.\n  2) Ask them to try to spit out the object if it's in their mouth. \n 3) If coughing doesn't work, start back blows and Abdominal thrusts. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+ "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Wound",
+       "patterns": [
+               "How do you treat a wound?",
+               "what to do if i get a Wound?",
+               "Which medicine to take if I get wounded?",
+               "How to cure a wound?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \n1) Rinse the cut or wound with water and apply pressure with sterile gauze, a bandage, or a clean cloth.\n  2) If blood soaks through the bandage, place another bandage on top of the first and keep applying pressure.\n  3) Raise the injured body part to slow bleeding.\n  4) When bleeding stops, cover the wound with a new, clean bandage. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Diarrhea",
+       "patterns": [
+               "How do you treat Diarrhea?",
+               "what to do if i get Diarrhea?",
+               "Which medicine to take if I get Diarrhea?",
+               "How to cure Diarrhea?"
+       ],
+       "responses": [
+               "Here's what you can do. \n1) Hydrating the body is essential for recovering from diarrhea.This causes the body to lose electrolytes such as sodium and chloride.\n  2) It is highly recommended to avoid dairy products, as they may worsen diarrhea in some people. \n 3) However, if diarrhea lasts for more than 2 days, seek medical advice to avoid complications. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Frost bite",
+       "patterns": [
+               "How do you treat a Frost bite?",
+               "what to do if i get a Frost bite?",
+               "Which medicine to take if I get a Frost bite?",
+               "How to cure Frost bite?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \n1) Protecting the affected area from further cold. \n 2) Not walking on frostbitten feet. \n 3) Reducing pain with ibuprofen (Advil, Motrin IB, others). \n 4) If you think you’re dehydrated, drink warm drinks. \n 5) See a doctor as soon as possible. \n For more information visit: https://www.webmd.com \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Heat Exhaustion",
+       "patterns": [
+               "How do you treat Heat Exhaustion?",
+               "what to do if i feel Exhausted due to heat?",
+               "Which medicine to take if I get Exhausted?",
+               "How to cure Heat Exhaustion?"
+       ],
+       "responses": [
+               "Here's what you can do. \n1) Drink plenty of fluids, especially sports drinks to replace lost salt (avoid caffeine and alcohol). \n 2) Remove any tight or unnecessary clothing. \n 3) Take a cool shower, bath, or sponge bath. \n 4) Apply other cooling measures such as fans or ice towels. \n For more information visit: https://www.webmd.com/fitness-exercise/heat-exhaustion#1 \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+     "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Heat Stroke",
+       "patterns": [
+               "How do you treat Heat Stroke?",
+               "what to do if i get a Heat Stroke?",
+               "Which medicine to take if I get Stroke?",
+               "How to cure a Heat Stroke?"
+       ],
+       "responses": [
+               "Here's what you can do. \n1) Fan air over the patient while wetting their skin with water from a sponge or garden hose. \n2) Apply ice packs to the patient's armpits, groin, neck, and back. Because these areas are rich with blood vessels close to the skin, cooling them may reduce body temperature. \n 3) Immerse the patient in a shower or tub of cool water. \n 4) If the person is young and healthy and suffered heat stroke while exercising vigorously -- what’s known as exertional heat stroke -- you can use an ice bath to help cool the body. \nFor more information visit: https://www.webmd.com/a-to-z-guides/heat-stroke-symptoms-and-treatment \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+      "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Insect Bites",
+       "patterns": [
+               "How do you treat a Insect Bite?",
+               "what to do if a insect bites me?",
+               "Which medicine to take if I get bitten by a insect?",
+               "How to cure an insect bite?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \nClean the bite with soap and water.\nKeep the bite and any other infected areas covered.\nUse topical hydrocortisone ointment or cream to reduce itching and swelling.\nUse calamine lotion to relieve itching.\nTake an antihistamine like Benadryl to reduce itching and swelling.\n1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+ 
+       ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "nose bleed",
+       "patterns": [
+               "How do you treat a bleeding nose?",
+               "what to do if i my nose is bleeding?",
+               "Which medicine to take if I get nose bleed?",
+               "How to cure nose bleeding?"
+       ],
+       "responses": [
+ "Oh!! That must hurt!! But don't worry, here's what you can do. \n1. sit down and firmly pinch the soft part of your nose, just above your nostrils, for at least 10-15 minutes. \n 2. lean forward and breathe through your mouth – this will drain blood into your nose instead of down the back of your throat.\n 3. place an ice pack or bag of frozen vegetables covered by a towel on the bridge of your nose.\n 4. stay upright, rather than lying down, as this reduces the blood pressure in the blood vessels of your nose and will discourage further bleeding.\n For more Information Visit https://www.nhsinform.scot/illnesses-and-conditions/ears-nose-and-throat/nosebleed \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Pulled Muscle",
+       "patterns": [
+               "How do you treat a Pulled Muscle?",
+               "what to do if my muscle is pulled?",
+               "Which medicine to take if I got pulled muscle?",
+               "How to cure a pulled muscle?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \n1) Take nonsteroidal anti-inflammatory drugs (NSAIDS) such as naproxen or ibuprofen to reduce pain and improve your ability to move around. \n 2) Rest the strained muscle.\n 3) Ice the muscle area (20 minutes every hour while awake). \n For more information visit: https://www.webmd.com/fitness-exercise/guide/muscle-strain#1 \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Rectal bleeding",
+       "patterns": [
+               "How do you treat Rectal Bleeding?",
+               "what to do if i get a Rectal Bleeding?",
+               "Which medicine to take if I get Rectal Bleeding?",
+               "How to cure Rectal Bleeding?"
+       ],
+       "responses": [
+               "Here's what you can do. \nRectal bleeding is managed first by correcting any low blood volume and anemia if present with blood transfusions and then, determining the site and cause of the bleeding, stopping the bleeding, and preventing future rebleeding. \n Rectal bleeding can be prevented if the cause of the bleeding can be found and definitively treated, for example, by removing the bleeding polyp or tumor. \n For more information visit: https://www.webmd.com/first-aid/rectal-bleeding-treatmen \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Sun_Burn",
+       "patterns": [
+               "How do you treat Sun Burn?",
+               "what to do if i get a Sun Burn?",
+               "Which medicine to take if I get Sun Burn?",
+               "How to cure a Sun Burn?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \n1. Apply aloe or over-the-counter moisturizing lotion to skin as directed.\n 2. Take a cool bath or shower to cool skin.\n 3. Apply cool compresses to soothe skin.\n 4. Take acetaminophen (Tylenol) or ibuprofen (Advil, Motrin, Nuprin) for pain.\n 5. Leave blisters alone.\nFor more information visit: https://www.webmd.com \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Testicle_Pain",
+       "patterns": [
+               "How do you treat Testicle Pain?",
+               "what to do if i get a Testicle Pain?",
+               "Which medicine to take if I get a Testicle Pain?",
+               "How to cure Testicle Pain?"
+       ],
+       "responses": ["Here's what you can do. \n1. For pain, take over-the-counter medication such as acetaminophen (Tylenol) or ibuprofen (Advil, Motrin).\n  2. For swelling, apply an ice pack to the scrotum.\n For more information follow this link:  https://www.webmd.com/first-aid/testicular-pain-treatment \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+      "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Bleeding",
+       "patterns": [
+               "How do you treat bleeding?",
+               "what to do if i get a Bleeding?",
+               "Which medicine to take if I get bleeding?",
+               "How to cure Bleeding?"
+       ],
+       "responses": [
+               "Hang in there. Here's what you can do. \n1) Stop Bleeding. \n 2) Clean Cut or Wound. \n 3) Protect the Wound. \n For more information visit: https://www.webmd.com/first-aid/bleeding-cuts-wounds \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information) "
+       ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Eye Injury",
+       "patterns": [
+               "How do you treat an eye Injury?",
+               "what to do if i get a eye Injury?",
+               "Which medicine to take if I injured my eye?",
+               "How to cure an injured eye?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \n1) Gently apply a small cold compress to reduce pain and swelling. \n 2) DO NOT apply any pressure. \n 3) If a black eye, pain or visual disturbance occurs even after a light blow, immediately contact your ophthalmologist or emergency room. \n For detailed information visit: https://www.webmd.com/eye-health/eye-injuries-treatment \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+      "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Chemical Burn",
+       "patterns": [
+               "How do you treat a chemical burn?",
+               "what to do if i get a Chemical Burn?",
+               "Which medicine to take if I get burn due to chemicals?",
+               "How to cure Chemical Burn?"
+       ],
+       "responses": ["Oh!! That must hurt!! But don't worry, here's what you can do. \n1. Protect Yourself.\n  2. Rinse and Clear Burn Area. \n 3. Cover a Small Burn Area.\n For more information follow the link:  https://www.webmd.com/first-aid/chemical-burns-treatment \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Poison",
+       "patterns": [
+               "How do you treat a Poison?",
+               "what to do if i get Poison?",
+               "Which medicine to take if I am poisoned?",
+               "How to cure Poisoning?"
+       ],
+       "responses": [
+               "Hang in there! In case of Poisoning it is advisable to call the ambulance or contact a doctor as soon as possible. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Teeth",
+       "patterns": [
+               "How do you treat broken Teeth ?",
+               "what to do if my Teeth got broken?",
+               "Which medicine to take if I get broken teeth?",
+               "cure broken teeth?"
+       ],
+       "responses": [
+      "Oh!! That must hurt!! But don't worry, here's what you can do. \n1) If chipped tooth, Save any pieces. \n 2) Rinse the mouth using warm water; rinse any broken pieces. \n 3) If there's bleeding, apply a piece of gauze to the area for about 10 minutes or until the bleeding stops. \n 4) Apply a cold compress to the outside of the mouth, cheek, or lip near the broken/chipped tooth to keep any swelling down and relieve pain. \n Call your dentist immediatelyFor more information visit: https://www.webmd.com/oral-health/handling-dental-emergencies \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+      "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "seizure",
+       "patterns": [
+               "How do you treat a seizure?",
+               "what to do if i get a seizure?",
+               "Which medicine to take if I get seizure?",
+               "How to cure seizure?"
+       ],
+       "responses": [
+               "Here's what you can do. \n1) Ease the person to the floor. \n 2) Turn the person gently onto one side. \n3) Put something soft and flat, like a folded jacket, under his or her head. \n4) Keep yourself and other people calm. \n Call for help as soon as possible  \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Head Injury",
+       "patterns": [
+               "How do you treat a head Injury?",
+               "what to do if i get a Head Injury?",
+               "Which medicine to take if I get injured in the head?",
+               "How to cure Head Injury?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \n1) Apply firm pressure to the wound with sterile gauze or a clean cloth. But don't apply direct pressure to the wound if you suspect a skull fracture.  \n 2)  Watch for changes in breathing and alertness. If the person shows no signs of circulation — no breathing, coughing or movement — begin CPR. \n Call for help as soon as possible \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Fainting",
+       "patterns": [
+               "How do you treat Faint?",
+               "what to do if i feel like Fainting?",
+               "Which medicine to take if I get a Faint?",
+               "How to cure Fainting?"
+       ],
+       "responses": ["Here's what you can do. \n1) Lay the person flat on their back. \n 2) Elevate the person's legs to restore blood flow to the brain. \n 3) Turn the Person on their side if they are vomiting or bleeding from the mouth \n 4) If the person is alert, give fruit juice, especially if the person has not eaten in more than 6 hours or has diabetes. \n For more detailed information visit: https://www.webmd.com/first-aid/fainting-treatment \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],     
+     "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Headache",
+       "patterns": [
+               "How do you treat a mild Headache?",
+               "what to do if i get a mild Headache?",
+               "Which medicine to take if I have a mild headache?",
+               "How to cure a mild headache?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \nGive ibuprofen (Advil, Motrin), aspirin, or acetaminophen (Tylenol) for pain.\n Avoid ibuprofen and other NSAIDs if the person has heart failure or kidney failure. \n Do not give aspirin to a child under age 18. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+ "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Cold",
+       "patterns": [
+               "How do you treat a Cold?",
+               "what to do if i get a mild Cold?",
+               "Which medicine to take if I have a Cold?",
+               "How to cure Cold?"
+       ],
+       "responses": [
+               "Here's what you can do. \n1)Keeping hydrated is absolutely vital to help 'flush' out the cold, as well as to break down congestion and keep your throat lubricated.\n  2)Vitamin C is extremely helpful when fighting infection, so at the first sign of a cold be sure to increase your intake by eating plenty of berries, citrus fruits, papayas, broccoli and red peppers which will help keep you protected. \n 3)When it comes to combating a cold,Vitamin D is essential in helping to regulate immune response. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+	   {"tag": "common_cold",
+       "patterns": ["I have Sore throat", "I have Cough", "Sneezing", "Congestion", "Low-grade fever"],
+       "responses": ["It looks like you might have a common cold. But don't worry, here's what you can do. \nTreating a cold needs a  medication for each symptom.\n 1. For  pain relief , fever and headache kindly take Ibuprofen.\n  2. Kindly take warm ginger lemon water for sore throat and  bed rest for 2 days.\n 3. Drink plenty of fluids\n  4. For aches and pains accompanied by a fever of 100.5 degrees or higher, give acetaminophen (Tylenol) rather than aspirin or naproxen (Naprosyn).\n 5. If the symptoms last for more than 2 days do refer a doctor or consultant.\n For more information follow this link: https://www.webmd.com/cold-and-flu/understanding-common-cold-treatment \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Rash",
+       "patterns": [
+               "How do you treat Rashes?",
+               "what to do if i get a Rash?",
+               "Which medicine to take if I have a Rash?",
+               "How to cure Rash?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \n1) Olive oil helps in healing and promotes skin renewal given it is packed with vitamin E and antioxidants. It also soothes the skin and reduces itching.\n  2) Baking soda is useful in drying skin rashes as also in relieving itching and inflammation.\n  3) Aloe Vera, thanks to its antibacterial, antifungal, anti-inflammatory and emollient properties, aloe vera is excellent for treating a number of skin ailments including rashes as also soothing the skin. \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "snake bite",
+       "patterns": [
+               "How do you treat a snake bite?",
+               "what to do if i get a snake bite?",
+               "Which medicine to take if I get a snake bite?",
+               "How to cure snake bite?",
+               "i got bit by a snake"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \nWhile waiting for medical help: 1)Move the person beyond the striking distance of the snake. \n  2)Have the person lie down with a wound below the heart.\n  3)Keep the person calm and at rest, remaining as still as possible to keep venom from spreading.\n  4)Cover the wound with loose, sterile bandage.\n  5)Remove any jewelry from the area that was bitten.\n  6)Remove shoes if the leg or foot was bitten.\n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information) "
+       ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "animal bite",
+       "patterns": [
+               "How do you treat a animal bite?",
+               "How do you treat a monkey bite?",
+               "How do you treat a dog bite?",
+               "what to do if i get a animal bite?",
+               "Which medicine to take if I get a monkey bite?",
+               "How to cure dog bite?",
+               "i got bit by a dog"],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \n1) Wash the wound with soap and warm water.\n  2) Gently press a clean cloth over the wound to stop the flow of blood.\n  3) Apply an antibacterial ointment to the wound.\n  4) Cover with a sterile bandage.\n  5) Watch for signs of infection.\n  6)Seek help if you suspect infection or possible exposure to rabies, or if the wound is severe. \n For more information follow this link: https://www.webmd.com \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Drowning",
+       "patterns": [
+               "What to do if someone is Drowning?",
+               "what to do if someone drowned?",
+               "What steps to take if i see a drowning person?",
+               "How to help a drowning person?"
+       ],
+       "responses": [
+                "Here's what you can do. \n1 )Place your ear next to the person's mouth and nose. Do you feel air on your cheek? 2) Look to see if the person's chest is moving.If the Person is Not Breathing, Check Pulse.\n 3) Check the person's pulse for 10 seconds. If There is no pulse, start CPR.\n  For more information follow this link: https://www.webmd.com/first-aid/drowning-treatment \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "CPR",
+       "patterns": [
+               "How to give CPR??",
+               "what to do in a CPR?",
+               "What steps to take in a CPR??",
+               "How to help a drowning person in CPR?"
+       ],
+       "responses": [
+               "Here's what you can do. \n1) For an adult or child, place the heel of one hand on the center of the chest at the nipple line. You can also push with one hand on top of the other. For an infant, place two fingers on the breastbone. \n 2) For an adult or child, press down at least 2 inches. Make sure not to press on ribs. For an infant, press down about 1 and 1/2 inches. Make sure not to press on the end of the breastbone.\n  3) Do chest compressions only, at the rate of 100-120 per minute or more. Let the chest rise completely between pushes.\n  4) Check to see if the person has started breathing.\n  For more information follow this link: https://www.webmd.com/first-aid/video/hands-only-cpr \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {
+       "tag": "Fracture",
+       "patterns": [
+               "How do you treat a Fracture?",
+               "what to do if i get a Fracture?",
+               "Which medicine to take if I have a Fracture?",
+               "How to cure a Fracture?"
+       ],
+       "responses": [
+               "Oh!! That must hurt!! But don't worry, here's what you can do. \n1) Stop any bleeding. Apply pressure to the wound with a sterile bandage, a clean cloth or a clean piece of clothing. \n 2) Immobilize the injured area. Don't try to realign the bone or push a bone that's sticking out back in. If you've been trained in how to splint and professional help isn't readily available, apply a splint to the area above and below the fracture sites. Padding the splints can help reduce discomfort. \n 3) Apply ice packs to limit swelling and help relieve pain. Don't apply ice directly to the skin. Wrap the ice in a towel, piece of cloth or some other material. \n 4) Treat for shock. If the person feels faint or is breathing in short, rapid breaths, lay the person down with the head slightly lower than the trunk and, if possible, elevate the legs. \n For more information follow this link: https://www.webmd.com/a-to-z-guides/colles-fracture \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+       ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {"tag": "Fever",
+       "patterns": ["I have a moderate Fever, weak muscle  ", "I have Fever,shivering ", "I have high Fever,general fatigue","How do you treat a mild Fever?",
+               "what to do if i get a mild fever?",
+               "Which medicine to take if I get a mild fever?",
+               "fever"],
+       "responses": ["1. We would recommend Ibuprofen\n  2. Take rest for at least 2 days.\n 3. Drink plenty of fluids to stay hydrated.\n4. Dress in lightweight clothing.\n5. Use a light blanket if you feel chilled, until the chills end.\nIf your body temperature remains the same for 2 days. We recommend you get tested by a doctor. It might be symptoms of Malaria.\n For more information follow this link: https://www.webmd.com/cold-and-flu/flu-treatment \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {"tag": "Malaria",
+       "patterns": ["Fever and Diarrhea", "Fever, Diarrhea,Fatigue", "Fever, Diarrhea,Fatigue and muscle pain"],
+       "responses": ["It looks like you might have malaria. But don't worry, here's what you can do. \n Malaria is a serious disease that causes high fever, chills, and flu-like symptoms that can be life-threatening if not treated quickly. Some drugs which are helpful are: Atovaquone-proguanil (Malarone), Chloroquine, Doxycycline.\n For more information follow this link: https://www.webmd.com/a-to-z-guides/malaria-pills \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+	   
+       {"tag": "Migraine",
+       "patterns": ["Constipation ,Nausea and vomiting", "Constipation,Pain usually on one side of your head, but often on both sides"],
+       "responses": ["Oh!! That must be tough!! But don't worry, here's what you can do. \n1.Rest in a Dark, Quiet Room.\n 2. Try Caffeine.\n 3.  Acetaminophen, aspirin, ibuprofen, and naproxen can bring pain relief.\n  For more information follow the link:\n https://www.webmd.com/migraines-headaches/default.htm \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {"tag": "Swine Flu ",
+       "patterns": ["Fever,Nausea and vomiting,Fatigue", "Fever,Nausea and vomiting,Headache", "Watery red eyes Fever,Nausea and vomiting"],
+       "responses": [" That must be tough! It could be symptoms of Swine flu. But don't worry, here's what you can do. Choose water, juice and warm soups to prevent dehydration.\n Get more sleep to help your immune system fight infection.\n Use an over-the-counter pain reliever, such as acetaminophen (Tylenol, others) or ibuprofen (Advil, Motrin IB, others).\n https://www.mayoclinic.org/diseases-conditions/swine-flu \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+       "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {"tag": "Conjunctivitis",
+       "patterns": ["Redness in one or both eyes", "Itchiness in one or both eyes,Redness in one or both eyes", "Itchiness in one or both eyes,Redness in one or both eyes,Teary"],
+       "responses": ["Oh! That must be tough! The symptoms suggest Conjunctivitis. Here's what you can do. \nCleaning your eyelids with a wet cloth, and applying cold or warm compresses several times daily.\nIf you wear contact lenses, you'll be advised to stop wearing them until treatment is complete.\nOver-the-counter eye drops that contain antihistamines and anti-inflammatory medications also may be effective \nFor more information visit  https://www.mayoclinic.org \n1. Would you like to continue? (Yes/No) \n2. Would you like the doctor's contact information? (Information)"],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },    
+	   {"tag": "Peptic ulcer disease",
+       "patterns": ["I am experiencing abdominal pain or stomach ache, vomiting, indigestion, passage of gas and internal itching", "I am experiencing indigestion, abdominal pain, passage of gas, internal itching and vomiting", "I am vomiting and have abdominal pain or stomach ache. I also have gas and internal itching"],
+       "responses": ["That must be tough! It seems like you might have Peptic ulcer disease.But don't worry, here's what you can do. \nPeptic ulcer disease (PUD) is a break in the inner lining of the stomach, the first part of the small intestine, or sometimes the lower oesophagus.\n An ulcer in the stomach is called a gastric ulcer, while one in the first part of the intestines is a duodenal ulcer. \n Please contact your physician or a Gastroenterologist to get a check-up done. \n Until then you should take the following precautions: \n 1. Avoid fatty spicy food. \n 2. Consume probiotic food.\n  3. eliminate milk.\n  4. Limit alcohol intake.\n  For more information follow this link: https://www.webmd.com/men/features/peptic-ulcer-disease-doctor \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+       },
+       {"tag": "GERD",
+        "patterns": ["I have stomach pain and ulcers on my tongue. I am also having cough, chest pain and acidity.", "I have ulcers on my tongue, vomiting, cough and acidity. I have been feeling slight chest pain as well.", "I am experiencing stomach pain, vomiting, tongue ulcers and cough."    ],
+        "responses": ["That must be tough! It looks like you might have GERD. But don't worry, here's what you can do.\nGastroesophageal reflux disease, or GERD, is a digestive disorder that affects the lower esophageal sphincter (LES), the ring of muscle between the esophagus and stomach. \n Many people, including pregnant women, suffer from heartburn or acid indigestion caused by GERD.\n Please contact your physician or a Gastroenterologist to get a check-up done.\n Until then you should take the following precautions:\n 1. avoid fatty spicy food.\n 2. avoid lying down after eating.\n  3. maintain healthy weight.\n 4. exercise.\n For more information follow this link:\n  https://www.webmd.com/heartburn-gerd/reflux-disease \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+     "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+  },
+ {
+    "tag": "Jaundice",
+    "patterns": [
+"I have high fever, yellow or yellowish skin, dark urine, and fatigue. I am also abdominal or stomach pain and itching.", 
+"I am vomiting and have lost weight. I have been itchy and fatigue. My skin has turned yellowish and I am passing dark urine and have high fever", 
+"I am experiencing fatigue, loss of weight, itching and high fever. My skin looks yellowish, and my urine is dark or more yellow. I am puking or vomiting and have a stomach ache."
+    ],
+    "responses": ["That must be tough! It looks like you might have jaundice. But don't worry, here's what you can do.\nYellow staining of the skin and sclerae (the whites of the eyes) by abnormally high blood levels of the bile pigment bilirubin. \n The yellowing extends to other tissues and body fluids.\n Jaundice was once called the morbus regius (the regal disease) in the belief that only the touch of a king could cure it.\n Please contact your physician or a Gastroenterologist to get a check-up done.\n Until then you should take the following precautions: 1. Drink plenty of water. 2. Consume milk thistle. \n 3. Eat fruits and high fibrous food. \n For more information follow this link: https://www.webmd.com/parenting/baby/jaundice-directory \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)" ],
+    "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+  },
+
+ {
+    "tag": "Hypothyroidism",
+    "patterns": ["I have gained weight. I feel fatigue, lethargic, mood swings, dizzy and irritability. My hands and feet are cold. My face and eyes are puffy. I have noticed that my thyroid has enlarged and extremely swollen. I am feeling depressed and irritated. My menstruation is not normal or abnormal and my nails are brittle.",       	
+ "My menstruation is abnormal. I am experiencing fatigue, swollen and enlarged thyroid, puffy face and eyes, sudden weight gain, lethargy, dizziness, mood swings, depression and irritability. My nails are brittle",
+"I feel depressed, and I have mood swings and irritation. My hands and legs are cold. I am feeling fatigue, dizziness and lethargy. I have gained weight, have abnormal menstruation, and have brittle nails . My face and eyes are puffy. My thyroid gland feels swollen and enlarged."
+    ],      	
+    "responses": ["Hang in there! It looks like you might have Hypothyroidism. But don't worry, here's what you can do.\nHyperthyroidism (overactive thyroid) occurs when your thyroid gland produces too much of the hormone thyroxine.\n Hyperthyroidism can accelerate your body's metabolism, causing unintentional weight loss and a rapid or irregular heartbeat.\n Please contact your physician or an endocrinologistto get a check-up done.\n Until then you should take the following precautions:\n 1. Decrease stress levels.\n  2. Exercise regularly.\n  3. Eat healthy.\n 4. Get proper sleep.\n For more information:  https://www.webmd.com/women/guide/low-thyroid-treatment \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+    ],
+     "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+  },
+
+ {
+    "tag": "Psoriasis",
+    "patterns": [
+ "I  have rashes on my skin, silver-colored scales on skin and skin is peeling. I have joint pain or joint ache. My nails are pitted, there are small dents in nails and nails are inflamed.",
+"I am experiencing joint pain, peeling of skin, rash on skin and silver like dusting. I have inflammatory nails, small dents in nails or pitted nails",
+"I have skin rash, skin peeling and silver color dusting on skin. I also have join ache, dents in nails and inflammatory nails"],
+
+"responses": ["Oh! That must be tough! It looks like you might have Psoriasis.\nBut don't worry, here's what you can do.\n.Psoriasis is a common skin disorder that forms thick, red, bumpy patches covered with silvery scales.\n They can pop up anywhere, but most appear on the scalp, elbows, knees, and lower back. Psoriasis can't be passed from person to person.\n It does sometimes happen in members of the same family.\n Please contact your physician or a dermatologist to get a check-up done.\n Until then you should take the following precautions:1. Wash hands with warm soapy water.\n 2. Stop bleeding using pressure.\n 3. Take salt baths.\n For more information: https://www.webmd.com/skin-problems-and-treatments/psoriasis/understanding-psoriasis-treatment \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"],
+
+ "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+},
+{
+    "tag": "Vertigo",
+    "patterns": ["I am experiencing headache, nausea, spinning movements and vomiting sensations",
+"I am vomiting and have a headache. Sometimes everything seems to be spinning and I feel nauseated",
+"I am experiencing headache and nausea. I feel spinning movements and vomiting",
+"How do you treat a Vertigo?",
+               "what to do if i get a Vertigo?",
+               "Which medicine to take if I get Vertigo?",
+               "How to cure a Vertigo?",
+               "Vertigo"
+    ], 
+    "responses": ["Oh, that must be tough! It looks like you might have (vertigo) Paroxysmal Positional Vertigo. But don't worry, here's what you can do.\nBenign paroxysmal positional vertigo (BPPV) is one of the most common causes of vertigo i.e., the sudden sensation that you're spinning or that the inside of your head is spinning. Benign paroxysmal positional vertigo causes brief episodes of mild to intense dizziness. Please contact your physician or an Audiologist to get a check-up done.\n Until then you should take the following precautions:1. Avoid sudden change in body.\n 2. Avoid abrupt head movement.\n 3. Lie down.\n 4. Relax.\n For more information: https://www.webmd.com/brain/vertigo-symptoms-causes-treatment \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"	
+],
+    "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+  }, 
+
+ {
+    "tag": "UTI",
+    "patterns": [
+ "I am experiencing bladder discomfort, continuous or constant need to urinate, foul smell of urine and burning micturition or burning while peeing",
+"It burns when I urinate or pee. I feel the constant need to urinate and smell of urine is foul. I also feel bladder discomfort",
+"I am feeling bladder discomfort, continuous feel to pee, burning micturition and foul smell of urine"
+    ],
+    "responses": ["Oh! That must be tough! It looks like you might have Urinary tract infection. But don't worry, here's what you can do.\nUrinary tract infection: An infection of the kidney, ureter, bladder, or urethra. Abbreviated UTI. Not everyone with a UTI has symptoms, but common symptoms include a frequent urge to urinate and pain or burning when urinating. Please contact your physician to get a check-up done.\n Until then you should take the following precautions:\n 1. Drink plenty of water.\n 2. Increase vitamin c intake.\n 3. Drink cranberry juice.\n 4. Take probiotics.\n For more information: https://www.webmd.com/a-to-z-guides/remedies-uti \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"    
+],
+     "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+  },
+
+{
+    "tag": "Varicose_veins",
+    "patterns": [
+"I have fatigue, cramps, bruising, swollen legs, swollen blood vessels and prominent veins on my calf. I am also obese.",
+"I have obesity, fatigue, cramps and bruising. My legs are swollen, and blood vessels are swollen. I also noticed prominent or darker veins on my calf.",
+"I am experiencing fatigue, cramps, bruises, swelling on my legs, swelling of blood vessels and prominent or distinguished veins on my calf or calves. I am obese as well."    
+],
+ "responses":
+[
+"Oh! That must be tough! It looks like you might be facing the issue of Varicose veins. But don't worry, here's what you can do.\nA vein that has enlarged and twisted, often appearing as a bulging, blue blood vessel that is clearly visible through the skin.\n Varicose veins are most common in older adults, particularly women, and occur especially on the legs.\n Please contact your physician, a phlebologist, a vascular surgeon or a dermatologist or to get a check-up done.\n Until then you should take the following precautions:\n 1. Lie down flat and raise the leg high.\n 2. Use vein compression.\n 3. Don't stand still for long.\n 4. Use ointments.\n For more information: https://www.webmd.com/skin-problems-and-treatments/spider-and-varicose-veins#1-5 \n 1. Would you like to continue? (Yes/No) \n 2. Would you like the doctor's contact information? (Information)"
+    ],
+        "context": ["cont_loop_yes" ,"cont_loop_no","Doctor_info"]
+  }
+
+   ]
+}
+
+
